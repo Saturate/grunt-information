@@ -1,0 +1,43 @@
+{
+  "name": "information",
+  "description": "Display some project information at run time!",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Saturate/grunt-information",
+  "author": {
+    "name": "Allan Kimmer Jensen",
+    "email": "allankimmerjensen@gmail.com",
+    "url": "saturate.dk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Saturate/grunt-information.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Saturate/grunt-information/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Saturate/grunt-information/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
