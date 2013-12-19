@@ -13,28 +13,31 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('information', 'Display some project information at run time!', function() {
+  grunt.registerTask('information', 'Display some project information at run time!', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       pgk: './package.json',
       bower: './bower.json',
+      listPeopleAs: 'Contacts: ',
       showVersions: true
     });
 
-    var projectInfo = require('./package.json'),
+    var projectInfo = grunt.file.readJSON(options.pgk),
         width = 80,
         contacts = [];
 
     grunt.log.subhead(grunt.log.wraptext(width, projectInfo.description));
     
-    // Project Contacts
-    grunt.log.subhead(grunt.log.wraptext(width, 'Contacts: '));
+    // Project Involved People/Contacts
+    grunt.log.subhead(grunt.log.wraptext(width, options.listPeopleAs));
     
     contacts.push( projectInfo.author );
 
-    projectInfo.contributors.forEach(function (element, index, array)  {
-       contacts.push(array[index].name  + ' <' + array[index].email + '>');
-    });
+    if (projectInfo.contributors) {
+      projectInfo.contributors.forEach(function (element, index, array)  {
+        contacts.push(array[index].name  + ' <' + array[index].email + '>');
+      });
+    }
 
     contacts.forEach(function (element, index, array)  {
       grunt.log.writeln([grunt.log.wraptext( width, ' - ' + array[index] )]);
@@ -48,6 +51,7 @@ module.exports = function(grunt) {
     }
 
     // Debugging
+    grunt.verbose.subhead(grunt.log.wraptext(width, 'Package Data:'));
     grunt.verbose.writeln(JSON.stringify(projectInfo));
 
     // Iterate over all specified file groups.
