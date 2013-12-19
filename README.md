@@ -1,6 +1,6 @@
 # grunt-information
 
-> Display some project information at run time!
+> Display some information about the project at grunt run time!
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -60,6 +60,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+ * 2013-12-19   v0.1.1   minor fixes in readme and project.json
  * 2013-12-19   v0.1.0   initial release
 
 ---
