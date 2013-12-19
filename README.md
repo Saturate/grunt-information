@@ -1,4 +1,4 @@
-# information
+# grunt-information
 
 > Display some project information at run time!
 
@@ -34,33 +34,13 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.pgk
 Type: `String`
-Default value: `',  '`
+Default value: `'./package.json'`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+The path to your package.json, this will be used to read info about your project.
 
 ### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  information: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
 
 #### Custom Options
 In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
@@ -69,15 +49,18 @@ In this example, custom options are used to do something else with whatever else
 grunt.initConfig({
   information: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      pgk: 'file.json'
     }
   },
 })
+```
 ```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+ * 2013-12-19   v0.1.0   initial release
+
+---
